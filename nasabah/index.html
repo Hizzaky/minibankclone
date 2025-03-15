@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WELCOME TO MINI BANK UMMAT</title>
+	<link rel="stylesheet" type="text/css" href="../trap/MDB/css/mdb.min.css">
+</head>
+<style type="text/css">
+	body{
+		background: lightslategray;
+		padding: 1em;
+	}
+	div.box{
+		background: white;
+		/*width: 50%;*/
+		border-radius: 5px;
+		padding: 10px;
+	}
+	h2{
+		text-align: center;
+	}
+
+	div.kop{
+		/*background-color: lightgreen;*/
+		/*border-radius: 10px;*/
+		border-top-left-radius: 2em;
+		border-bottom-right-radius: 2em;
+		/*opacity: 70%;*/
+		padding: 3px;
+		/*background: #7bcc78;*/
+		border: 5px solid green;
+	}
+	h2.kop{
+		color: black;
+		font-family: Segoe Print;
+		font-weight: bolder;
+	}
+</style>
+<body>
+	<div class="container">
+		<div class="row ">
+			<div class="col-md-1" ></div>
+	        <div class="col-sm-2 ">
+				<div style="margin-left:2em;">
+	            	<img src="../pic/fai.png" width="130" height="130" alt="Computer Hope">
+	        	</div>
+	        </div>
+	        <div class="col-md-6 text-center kop">
+	            <p></p>
+				<h2 class="heading-section kop"><strong>APLIKASI MINI BANK</strong></h2>
+				<h2 class="heading-section kop"><strong>EKONOMI SYARIAH</strong></h2>
+	        </div>
+	        <div class="col-sm-2 ">
+	            <img src="../pic/mb.png" width="130" height="130" alt="Computer Hope">
+	        </div>
+	    </div><br>
+	    <div style="background: ; border-radius: 1em; text-align: center;">
+			<div class="" style="font-family: arial; color: black;">
+				<h4><i>BISMILLAAHIRRAHMAANIRRAHIIM</i></h4>
+			</div>
+		</div>
+		<h2><span id="nsb"></span></h2><hr>
+		<h2>
+			<a class="btn btn-info" href="pengajuan">Pengajuan Pembiayaan</a>
+			<a class="btn btn-danger" href="../out.php">Logout</a>
+		</h2>
+	<hr>
+</body>
+<script type="text/javascript">
+	fetch("nsb.php")
+		.then(res=>res.text())
+		.then(txt=>document.getElementById('nsb').innerHTML=txt);
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>MINI BANK UMMAT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet"> -->
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="../login/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../trap/css/bootstrap.css">
+</head>
+<style>
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+		-moz-appearance: textfield;
+	}
+	h2{
+		text-align: center;
+	}
+	div.top{
+		padding-top: 5%;
+	}
+	div.card{
+		padding: 5px;
+	}
+	div.card-header{
+		background-color: lightblue;
+	}
+</style>
+</head>
+<body>
+	<input type="text" id="id" value="1" hidden>
+	<div class="container">
+		<div class="top col-md-12">
+			<h2><strong>REGISTER AKUN MINI BANK UMMAT</strong></h2><br>
+		</div>
+		<div class="card" style="background: #eee;">
+			<span id="info"></span>
+			<form id="formReg" onsubmit="return reg()" action="" method="" enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-header">SIGN UP :</div>
+							<div class="card-body">
+								<div class="form-group mb-3">
+									<label class="label" for="username">Username</label>
+									<input type="text" maxlength="50" class="form-control" id="username" name="username" placeholder="Username"  required onkeypress="return event.charCode != 32">
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="password">Password</label>
+									<input type="password" id="pw1" maxlength="50" class="form-control" name="password" placeholder="Password"  required onkeypress="return event.charCode != 32">
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="password">Ulang Password</label>
+									<input type="password" id="pw2" maxlength="50" class="form-control" name="repassword" placeholder="Ulang Password"  required onkeypress="return event.charCode != 32">
+								</div>
+							</div>
+						</div>
+					</div>		
+				</div>
+				<div class="" style="padding: 1em;">
+					<button class="btn btn-info form-control"><strong>NEXT</strong></button>
+				</div>
+			</form>
+		</div> <!-- end card -->
+		<br><br><br>
+	</div>
+</body>
+<script type="text/javascript">
+	
+</script>
+</html>

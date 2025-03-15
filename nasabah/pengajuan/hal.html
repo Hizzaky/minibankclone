@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../trap/MDB/css/mdb.min.css">
+</head>
+<style type="text/css">
+	body{
+		background: lightslategray;
+		padding: 1em;
+	}
+	div.box{
+		background: white;
+		/*width: 50%;*/
+		border-radius: 5px;
+		padding: 10px;
+	}
+	h2{
+		text-align: center;
+	}
+	div.card-header{
+		background-color: lightblue;
+	}
+	label.x{
+		color: red;
+	}
+	label.label{
+		font-weight: bold;
+	}
+	button.bt{
+		font-weight: bold !important;
+		font-size: 1.5em;
+	}
+	div.kop{
+		/*background-color: lightgreen;*/
+		/*border-radius: 10px;*/
+		border-top-left-radius: 2em;
+		border-bottom-right-radius: 2em;
+		/*opacity: 70%;*/
+		padding: 3px;
+		/*background: #7bcc78;*/
+		border: 5px solid green;
+	}
+	h2.kop{
+		color: black;
+		font-family: Segoe Print;
+		font-weight: bolder;
+	}
+</style>
+<body>
+	<div class="container">
+		<br>
+	    <div style="background: ; border-radius: 1em; text-align: center;">
+			<div class="" style="font-family: arial; color: black;">
+				<h4><i>BISMILLAAHIRRAHMAANIRRAHIIM</i></h4>
+			</div>
+		</div>
+		<!-- <hr> -->
+		<!-- <h2>HALAMAN NASABAH</h2> -->
+		<hr>
+		<!-- <h2>
+			<a class="btn btn-primary" href="#">Pengajuan Pembiayaan</a>
+			<a class="btn btn-danger" href="../../out.php">Logout</a>
+		</h2> -->
+		<div class="box">
+			<div class="card">
+				<div class="card-header"><h2>KELENGKAPAN DATA</h2></div>
+				<span id="info"></span>
+				<div class="card-body">
+					<span id="data"></span>
+				</div>
+			</div>
+		</div>
+	<hr>
+</body>
+<script type="text/javascript">
+	fet();
+	function fet(){
+		fetch("data.php")
+			.then(res=>res.text())
+			.then(txt=>{document.getElementById('data').innerHTML=txt});
+	}
+	function tautan(){
+		var form=document.getElementById('form'),
+			data=new FormData(form);
+		fetch("up.php",{method:"POST", body:data})
+			.then(res=>res.text())
+			.then(txt=>{document.getElementById('info').innerHTML=txt});
+			fet();
+		return false;
+	}
+	function del(){
+		var form=document.getElementById('form'),
+			data=new FormData(form);
+		fetch("del.php",{method:"POST", body:data})
+			.then(res=>res.text())
+			.then(txt=>{document.getElementById('info').innerHTML=txt});
+			fet();
+		return false;
+	}
+	function ktp(){
+		var form=document.getElementById('form'),
+			data=new FormData(form);
+		fetch("up.php",{method:"POST", body:data})
+			.then(res=>res.text())
+			.then(txt=>{document.getElementById('info').innerHTML=txt});
+			fet();
+		return false;
+	}
+
+	function rab(){
+		var form=document.getElementById('form'),
+			data=new FormData(form);
+		fetch("up.php",{method:"POST", body:data})
+			.then(res=>res.text())
+			.then(txt=>{document.getElementById('info').innerHTML=txt});
+			fet();
+		return false;
+	}
+</script>
+</html>

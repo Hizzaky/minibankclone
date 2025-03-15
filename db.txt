@@ -1,0 +1,5 @@
+heyworld db 
+    db server   : localhost:3306
+    db name     : db_minibank
+    username    : dbminibank
+    password    : minibank

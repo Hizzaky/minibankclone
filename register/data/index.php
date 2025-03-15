@@ -1,0 +1,135 @@
+<?php 
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+ ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>MINI BANK UMMAT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet"> -->
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="../../login/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../trap/css/bootstrap.css">
+</head>
+<style>
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+		-moz-appearance: textfield;
+	}
+	h2{
+		text-align: center;
+	}
+	div.top{
+		padding-top: 5%;
+	}
+	div.card{
+		padding: 5px;
+	}
+	div.card-header{
+		background: lightblue;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="top col-md-12">
+			<h2><strong>REGISTER AKUN MINI BANK UMMAT</strong></h2><br>
+		</div>
+		<div class="card" style="background: #eee;">
+			<form action="" method="" enctype="multipart/form-data">
+				<input type="text" name="username" value="<?php echo $username ?>" hidden>
+				<input type="text" name="password" value="<?php echo $password ?>" hidden>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-header">DATA DIRI :</div>
+							<div class="card-body">
+								<div class="form-group mb-3">
+									<label class="label" for="ktp">Nomor KTP</label>
+									<input type="number" maxlength="16" class="form-control" name="ktp" placeholder="Nomor KTP"  required
+									oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="nama_lengkap">Nama Lengkap (Sesuai KTP)</label>
+									<input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap" required>
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="tempat_lahir">Tempat Lahir</label>
+									<input type="text" class="form-control" name="tempat_lahir" placeholder="Tempat Lahir" required onkeydown="return /[a-z]/i.test(event.key)">
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="tanggal_lahir">Tanggal Lahir</label>
+									<input type="date"  class="form-control" name="tanggal_lahir" placeholder="Tanggal Lahir" required>
+								</div>
+							</div>
+						</div>
+					</div>			
+					<div class="col-md-4">
+						<!-- <legend></legend><hr> -->
+						<div class="card">
+							<div class="card-header">ALAMAT TEMPAT TINGGAL :</div>
+							<div class="card-body">
+								<div class="form-group mb-3">
+									<label class="label" for="alamat">Alamat Saat Ini</label>
+									<!-- <input type="text"  class="form-control" name="alamat" placeholder="Alamat Saat ini" required> -->
+									<textarea type="text"  class="form-control" name="alamat" placeholder="Alamat Saat ini" required></textarea>
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="desa">Desa</label>
+									<input type="text"  class="form-control" name="desa" placeholder="Desa" required>
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="kecamatan">Kecamatan</label>
+									<input type="text"  class="form-control" name="kecamatan" placeholder="Kecamatan" required>
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="kabupaten">Kabupaten/Kota</label>
+									<input type="text"  class="form-control" name="kabupaten" placeholder="Kabupaten/Kota" required>
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="provinsi">Provinsi</label>
+									<input type="text"  class="form-control" name="provinsi" placeholder="Provinsi" required>
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="kode">Kode Area</label>
+									<input type="text"  class="form-control" name="kode" placeholder="Kode Area" required>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-header">KONTAK :</div>
+							<div class="card-body">
+								<div class="form-group mb-3">
+									<label class="label" for="hp">Nomor HP</label>
+									<input type="number" maxlength="13" class="form-control" name="hp" placeholder="Nomor HP"  required
+									oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="email">Email</label>
+									<input type="email" class="form-control" name="email" placeholder="Email" required onkeypress="return event.charCode != 32">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="" style="padding: 1em;">
+					<button class="btn btn-info form-control"><strong>REGISTER</strong></button>
+				</div>
+			</form>
+		</div> <!-- end card -->
+		<br><br><br>
+	</div>
+</body>
+</html>

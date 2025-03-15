@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>MINI BANK UMMAT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../trap/css/bootstrap.css"> -->
+</head>
+<style type="text/css">
+	body {	/*background*/
+		background:url(../pic/bg.jpeg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		padding: 1em;
+	}
+	div.kop{
+		background-color: lightgreen;
+		/*border-radius: 10px;*/
+		border-top-left-radius: 2em;
+		border-bottom-right-radius: 2em;
+		/*opacity: 70%;*/
+		padding: 3px;
+		background: #7bcc78;
+		border: 5px solid green;
+	}
+	h2.kop{
+		color: black;
+		font-family: Segoe Print;
+		font-weight: bolder;
+	}
+	h3.h3{
+		color: white;
+	}
+</style>
+<body>
+	    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+        <div class="container-fluid">
+                <div class="col-md-2" ></div>
+                    <div style="margin-left: 5em;">
+                        <img src="../pic/fai.png" width="100" height="100" alt="Computer Hope">
+                    </div>
+                <div class=" text-center ">                         
+                    <h3 class="heading-section h3"><strong>APLIKASI MINI BANK</strong></h3>
+                    <h3 class="heading-section h3"><strong>EKONOMI SYARIAH</strong></h3>
+                </div>
+                <div class="" style="margin-right: 20em;">
+                    <img src="../pic/mb.png" width="100" height="100" alt="Computer Hope">
+                </div>
+        </div>
+    </nav>
+    <!-- END Navbar -->
+	<!-- <section class="ftco-section"> -->
+		<div class="container "><br><br><br><br>
+		<div style="background: whitesmoke; border-radius: 1em; text-align: center;">
+			<div class="" style="font-family: arial;"><h4><i>BISMILLAAHIRRAHMAANIRRAHIIM</i></h4></div>
+		</div>
+			<div class="container" style="text-align: center;">
+				<a href="../">
+					<button class="btn btn btn-warning" ><strong>< HOMEPAGE</strong></button>
+				</a>
+				<button class="btn btn btn-info" onclick="nasabah()">LOGIN NASABAH</button>
+				<button class="btn btn btn-info" onclick="admin()">LOGIN ADMIN</button>
+			</div><hr>
+			<span id="info"></span>
+			<span id="login"></span>
+		</div>
+	<!-- </section> -->
+
+</body>
+	<script type="text/javascript">
+		nasabah();
+
+		function nasabah() {
+			document.getElementById('info').innerHTML="";
+			fetch("nasabah.html")
+				.then(res => res.text())
+				.then(txt => document.getElementById('login').innerHTML=txt);
+		}
+
+		function admin() {
+			document.getElementById('info').innerHTML="";
+			fetch("admin.html")
+				.then(res => res.text())
+				.then(txt => document.getElementById('login').innerHTML=txt);
+		}
+
+		function login_nasabah(){
+			var form=document.getElementById('formNasabah'),
+				data=new FormData(form);
+
+			fetch("nasabah.php", {method:"POST", body:data})
+				.then(res=>res.text())
+				.then(txt=>{document.getElementById('info').innerHTML=txt,
+										loc(document.getElementById('dir').value);
+			});
+			return false;
+		}
+
+		function login_admin(){
+			var form=document.getElementById('formAdmin'),
+				data=new FormData(form);
+
+			fetch("admin.php", {method:"POST", body:data})
+				.then(res=>res.text())
+				.then(txt=>{document.getElementById('info').innerHTML=txt,
+										loc(document.getElementById('dir').value);
+			});
+			return false;
+		}
+		function loc(x){
+				location.replace(x);
+		}
+	</script>
+</html>
+
