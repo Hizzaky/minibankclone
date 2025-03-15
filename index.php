@@ -25,6 +25,6 @@ function dbb()
 	}
 }
 
-echo dbb();
+// echo dbb();
 ?> 
-<hr> <h1>cek db </h1> 
+<hr> <h1>git deploy free hosting </h1> 
